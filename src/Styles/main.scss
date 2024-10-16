@@ -1,0 +1,66 @@
+@import "config";
+@import "card";
+@import "navbar";
+@import "dashboard";
+@import "spinner";
+
+.user-avatar,
+.user-avatar-unavailable {
+  width: 22px; // Base size for avatars
+  height: 22px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 7px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.user-avatar {
+  &::after {
+    background-color: rgb(255, 166, 0); // Online indicator
+  }
+}
+
+.user-avatar-unavailable {
+  &::after {
+    background-color: #ada4a4; // Offline indicator
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .user-avatar,
+  .user-avatar-unavailable {
+    width: 18px; // Smaller avatar size on tablets
+    height: 18px;
+  }
+
+  &::after {
+    width: 7px; // Adjust indicator size for smaller avatars
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-avatar,
+  .user-avatar-unavailable {
+    width: 16px; // Even smaller size for mobile devices
+    height: 16px;
+  }
+
+  &::after {
+    width: 6px; // Adjust indicator size further for mobile
+    height: 5px;
+  }
+}

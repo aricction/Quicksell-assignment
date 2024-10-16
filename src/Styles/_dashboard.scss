@@ -1,0 +1,103 @@
+.Dashboard-Container {
+  height: calc(100% - 60px);
+  padding: 25px;
+  gap: 20px;
+  width: 100%;
+  overflow-x: hidden;
+  zoom: 0.75; // Note: This property may not work in all browsers
+  display: flex;
+  flex-wrap: wrap;
+
+  .column {
+    flex: 1;
+    max-width: calc(20% - 20px); // Adjust for the number of columns
+    border-radius: 8px;
+
+    @media (max-width: 1200px) {
+      max-width: calc(25% - 20px); // 4 columns for medium screens
+    }
+    
+    @media (max-width: 900px) {
+      max-width: calc(33.33% - 20px); // 3 columns for smaller screens
+    }
+    
+    @media (max-width: 600px) {
+      max-width: calc(50% - 20px); // 2 columns for mobile
+    }
+    
+    @media (max-width: 400px) {
+      max-width: 100%; // 1 column for very small screens
+    }
+  }
+
+  .Header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    @media (max-width: 600px) {
+      flex-direction: column; // Stack elements on smaller screens
+      align-items: flex-start; // Align items to the left
+    }
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 22px;
+
+        @media (max-width: 600px) {
+          font-size: 18px; // Smaller icon size on mobile
+        }
+      }
+
+      .text {
+        padding: 0px 12px;
+        font-weight: 600;
+        color: black;
+        font-size: 16px;
+
+        @media (max-width: 600px) {
+          font-size: 14px; // Smaller text size on mobile
+        }
+      }
+
+      span {
+        color: #8a8585;
+        font-size: 16px;
+
+        @media (max-width: 600px) {
+          font-size: 14px; // Smaller text size on mobile
+        }
+      }
+
+      #todo {
+        color: #8a8585;
+      }
+      #progress {
+        color: rgba(247, 166, 15, 0.699);
+      }
+      #done {
+        color: rgba(79, 39, 210, 0.71);
+      }
+      #cancel {
+        color: #8a8585cd;
+      }
+      #backlog {
+        color: rgb(80, 55, 206);
+      }
+    }
+
+    .actions {
+      i {
+        font-size: 22px;
+        color: #8a8585;
+
+        @media (max-width: 600px) {
+          font-size: 18px; // Smaller action icon size on mobile
+        }
+      }
+    }
+  }
+}
