@@ -39,15 +39,15 @@ const Card = ({
         <div className="status-heading">
           {grouping === "users" || grouping === "priority" ? (
             statusMapping[id] === "Todo" ? (
-             <img src={Todo} height="20px" width="20px" id="todo"/>
+             <img src={Todo} height="20px" width="20px" alt="todo"id="todo"/>
             ) : statusMapping[id] === "In progress" ? (
-              <img src={progress}  height="20px" width="20px" id="progress"/>
+              <img src={progress}  height="20px" width="20px" alt="progress" id="progress"/>
             ) : statusMapping[id] === "Backlog" ? (
-              <img src={Backlog} height="20px" width="20px" id="backlog"/>
+              <img src={Backlog} height="20px" width="20px" alt="backlog"id="backlog"/>
             ) : statusMapping[id] === "Done" ? (
-              <img src={Done} height="20px " width="20px" id="done"/>
+              <img src={Done} height="20px " width="20px" alt="done" id="done"/>
             ) : (
-              <img src={Cancelled} height="20px" width="20px" id="cancel" />
+              <img src={Cancelled} height="20px" width="20px" alt="cancelled"id="cancel" />
             )
           ) : null}
           <p>{id}</p>
